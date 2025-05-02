@@ -105,123 +105,173 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+![Screenshot 2025-05-01 213324](https://github.com/user-attachments/assets/96559919-d9e5-4220-910c-b3ede4233a0b)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+INSERT INTO Employee(EmployeeID, Name, Department, Salary)
+SELECT EmployeeID, Name, Department,Salary
+FROM Former_employees;
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Screenshot 2025-05-01 214546](https://github.com/user-attachments/assets/ff022ec9-cd6c-455d-9c0f-272e23f7debb)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![Screenshot 2025-05-01 213340](https://github.com/user-attachments/assets/614101e5-669f-4c44-8479-04348e67d22c)
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE Bonuses  (
+            BonusID INTEGER PRIMARY KEY,
+            EmployeeID INTEGER,
+            BonusAmount REAL CHECK (BonusAmount > 0),
+            BonusDate DATE,
+            Reason TEXT NOT NULL,
+            FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID))
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Screenshot 2025-05-01 214603](https://github.com/user-attachments/assets/cb865ade-03e0-41d0-9c46-91d2cc768f6a)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+
+![Screenshot 2025-05-01 213347](https://github.com/user-attachments/assets/efcfca1a-a592-4cc3-99f0-d76816b88c74)
 
 ```sql
--- Paste your SQL code below for Question 3
+INSERT INTO Employee (EmployeeID,Name,Position,Department,Salary)
+VALUES (1,'Sarah Parker','Manager','HR',60000);
 ```
 
 **Output:**
 
-![Output3](output.png)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+
+![Screenshot 2025-05-01 213356](https://github.com/user-attachments/assets/ca7bb4b3-6976-4542-9c94-0e38a972f222)
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE Departments (DepartmentID INTEGER, DepartmentName TEXT);
 ```
 
 **Output:**
 
-![Output4](output.png)
+![Screenshot 2025-05-01 214633](https://github.com/user-attachments/assets/b2c8b7ef-1211-4791-8d76-23e8baa96967)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+
+![Screenshot 2025-05-01 213406](https://github.com/user-attachments/assets/d4ff80a9-cd69-4bf1-91f3-ecfd0a585b16)
 
 ```sql
--- Paste your SQL code below for Question 5
+INSERT INTO  Student_details (RollNo, Name, Gender, Subject, MARKS)
+VALUES (202, 'Ella King', 'F', 'Chemistry', 87),
+       (203, 'James Bond', 'M', 'Literature', 78);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![Screenshot 2025-05-01 214646](https://github.com/user-attachments/assets/8ef9d23b-4778-4e58-8559-62cdcbf91773)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![Screenshot 2025-05-01 213507](https://github.com/user-attachments/assets/624abf68-191e-4d6a-8726-552d17644082)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE Orders (
+        OrderID INTEGER PRIMARY KEY,
+        OrderDate DATE NOT NULL,
+        CustomerID INTEGER,
+        FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID));
 ```
 
 **Output:**
 
-![Output6](output.png)
+![Screenshot 2025-05-01 214659](https://github.com/user-attachments/assets/6f797a71-2287-44dc-af1c-093de0b540fe)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+
+![Screenshot 2025-05-01 213518](https://github.com/user-attachments/assets/19693d8e-60c7-4137-8220-31107ec93e56)
 
 ```sql
--- Paste your SQL code below for Question 7
+ALTER TABLE employee ADD COLUMN department_id INTEGER;
+ALTER TABLE employee ADD COLUMN manager_id INTEGER DEFAULT NULL;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![Screenshot 2025-05-01 214709](https://github.com/user-attachments/assets/10b3dfdb-e3a3-463d-a092-fa6d62bf0b29)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![Screenshot 2025-05-01 213541](https://github.com/user-attachments/assets/b91598fd-b84c-43d3-a802-1c6333de0ac2)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE Shipments (
+    ShipmentID INTEGER PRIMARY KEY,
+    ShipmentDate DATE,
+    SupplierID INTEGER,
+    OrderID INTEGER,
+    FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID));
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Screenshot 2025-05-01 214718](https://github.com/user-attachments/assets/6be5a7e6-f20a-49ea-a0ff-ce1e27dd6b86)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+
+![Screenshot 2025-05-01 213547](https://github.com/user-attachments/assets/91e35b62-68de-4027-a52c-0df416c052e1)
 
 ```sql
--- Paste your SQL code below for Question 9
+ALTER TABLE Student_details
+ADD COLUMN Date_of_birth Date;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![Screenshot 2025-05-01 214736](https://github.com/user-attachments/assets/b0d1717c-81b6-47e5-9e14-636d24de13ae)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![Screenshot 2025-05-01 213556](https://github.com/user-attachments/assets/66e5565f-f763-4c19-a24b-497f413f558f)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE orders (
+        ord_id TEXT NOT NULL CHECK (length(ord_id) = 4),
+        item_id TEXT NOT NULL,
+        ord_date DATE NOT NULL,
+        ord_qty INTEGER,
+        cost INTEGER,
+        PRIMARY KEY (item_id,ord_date)
+        );
 ```
 
 **Output:**
 
-![Output10](output.png)
+![Screenshot 2025-05-01 214750](https://github.com/user-attachments/assets/d3bd7f4c-f7b8-45bd-894b-9ef8651c0f88)
+
+![Screenshot 2025-05-01 215155](https://github.com/user-attachments/assets/22835457-2897-453e-a599-d15e3e03eea2)
 
 
 ## RESULT
