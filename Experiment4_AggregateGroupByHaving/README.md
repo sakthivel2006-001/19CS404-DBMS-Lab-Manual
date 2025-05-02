@@ -1,4 +1,9 @@
 # Experiment 4: Aggregate Functions, Group By and Having Clause
+```
+Developed by;
+Name : SAKTHIVEL S
+Reg No: 212223220090
+```
 
 ## AIM
 To study and implement aggregate functions, GROUP BY, and HAVING clause with suitable examples.
@@ -38,124 +43,196 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/b975a4c1-a98d-4751-a2cc-2ae4c371c482)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 1
+SELECT SUM(income) AS total_income
+FROM employee
+WHERE age>=40;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/27514f5d-209c-4232-be18-3279f638013a)
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/7794d866-5e98-4f9a-838d-62d4fb8f4712)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 2
+SELECT COUNT(DISTINCT age) AS COUNT
+FROM employee;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/afff410c-a3e6-4cd1-9880-ddd0c0d2dd5d)
 
-![Output2](output.png)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/62a2b6bb-397d-4e57-b89a-daa851c23eb0)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 3
+SELECT COUNT(*) AS employees_in_california
+FROM employee
+WHERE city='California';
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/52895cd7-0aa4-471f-a7d5-8982c09bba36)
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/0cc3f666-8b34-44a0-80d4-9ed7e9e2410a)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 4
+SELECT 
+    SUBSTR(ValidityPeriod,1,4) AS ValidityYear,
+    COUNT(PatientID) AS TotalPatients
+FROM
+    Insurance
+GROUP BY
+    SUBSTR(ValidityPeriod,1,4)
+ORDER BY
+    ValidityYear;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/c14d1284-ce99-44b3-a94f-227af37c9435)
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/ef31589c-b07f-4c3e-9aee-f181dde5e7b9)
 
-```sql
--- Paste your SQL code below for Question 5
+**Program:**
+```sqlSELECT
+    Diagnosis,
+    COUNT(*) AS DiagnosisCount
+FROM
+    MedicalRecords
+GROUP BY
+    Diagnosis
+ORDER BY
+    DiagnosisCount DESC
+LIMIT 1;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/fb42a7e2-0161-46bc-b855-2d29ce43ac95)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/009b407d-902d-4b3d-9200-b685bf040e89)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 6
+SELECT
+    Frequency,
+    COUNT(*) AS TotalPrescriptions
+FROM
+    Prescriptions
+GROUP BY
+    Frequency;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/c25bf64e-07d8-4561-a19a-7652874b266d)
 
-![Output6](output.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/f08afdaa-3a6f-4ae7-be70-62e4368820a3)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 7
+SELECT
+    jdate,
+    SUM(workhour)
+FROM
+    employee1
+GROUP BY
+    jdate
+HAVING
+    SUM(workhour) > 40;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/56cd9419-9f03-4a03-9ab1-b515113d6d5f)
 
-![Output7](output.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/5c2b87a0-f548-48e2-b9b1-c42173a857eb)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 8
+SELECT
+    jdate,
+    MIN(workhour)
+FROM
+    employee1
+GROUP BY
+    jdate
+HAVING
+    MIN(workhour) < 10;
 ```
 
 **Output:**
-
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/7ef79842-e656-472a-9bfb-4d666aa9f6d4)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/b6429d44-f346-4578-9c94-a852cd8a0185)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 9
+SELECT
+    city,
+    AVG(income)
+FROM
+    employee
+GROUP BY
+    city
+HAVING
+    AVG(income) > 500000;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/9287d6e8-04b6-43cd-92b6-e2cac55bde33)
 
-![Output9](output.png)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/a40f8506-28a3-421e-a298-8c62c1fe4729)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 10
+SELECT
+    address,
+    AVG(salary)
+FROM
+    customer1
+GROUP BY
+    address
+HAVING
+    AVG(salary) > 5000;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/ae2fb4d9-a575-426e-b39e-164865f194b3)
 
-![Output10](output.png)
 
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
+
+## Module Completion
+![image](https://github.com/user-attachments/assets/087ce1c1-c916-48ad-ab4f-9820f73de427)
