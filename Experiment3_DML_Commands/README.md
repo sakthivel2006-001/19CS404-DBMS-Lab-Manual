@@ -47,123 +47,168 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+![Screenshot 2025-05-01 220205](https://github.com/user-attachments/assets/509a4d30-4e76-45be-9366-028106f44d5c)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+UPDATE employees
+SET EMAIL = 'Unavailable';
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Screenshot 2025-05-01 221236](https://github.com/user-attachments/assets/f54228f7-23cf-4d98-88d3-d030aafb0253)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![Screenshot 2025-05-01 220219](https://github.com/user-attachments/assets/27f14a01-d055-42fd-b135-e9f608e0beef)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE suppliers
+SET supplier_name = UPPER(supplier_name)
+WHERE contact_person LIKE '%Singh%';
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Screenshot 2025-05-01 221301](https://github.com/user-attachments/assets/3f6978d3-892c-4605-9b8f-7d62c03879c3)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![Screenshot 2025-05-01 220228](https://github.com/user-attachments/assets/f46a9bc1-8299-4662-b93a-aa938561b7be)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE products
+SET reorder_lvl = ROUND(reorder_lvl * 1.3)
+WHERE category = 'Food'
+    AND quantity < (reorder_lvl * 0.5);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![Screenshot 2025-05-01 221319](https://github.com/user-attachments/assets/600b38f4-1900-49cb-b026-ed1ebb435a91)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![Screenshot 2025-05-01 220253](https://github.com/user-attachments/assets/f9c29264-3058-4dec-8bd4-d9ab44336dcf)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+UPDATE products
+SET reorder_lvl = ROUND(reorder_lvl * 0.7)
+WHERE cost_price > 50
+AND quantity < 100;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![Screenshot 2025-05-01 221326](https://github.com/user-attachments/assets/976f17c5-f77d-4924-b8ea-365d2bf532ca)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![Screenshot 2025-05-01 220306](https://github.com/user-attachments/assets/3e1769ef-f088-4d5c-afef-8a0e47c270d1)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE employees
+SET salary = CASE
+                    WHEN department_id = 40 THEN ROUND(salary * 1.25)
+                    WHEN department_id = 90 THEN ROUND(salary * 1.15)
+                    WHEN department_id = 110 THEN ROUND(salary * 1.10)
+                    ELSE salary
+                    END
+WHERE department_id IN (40,90,110);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![Screenshot 2025-05-01 221337](https://github.com/user-attachments/assets/c2b2e9d2-ad20-4759-899b-87f34108d10f)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![Screenshot 2025-05-01 220318](https://github.com/user-attachments/assets/2719d592-9949-4ad5-a044-5da4149fe53a)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM Customer
+WHERE LOWER(CUST_NAME) LIKE '%holmes%';
 ```
 
 **Output:**
 
-![Output6](output.png)
+![Screenshot 2025-05-01 221438](https://github.com/user-attachments/assets/6e9b2820-8524-44b8-a42b-bfc5f452db7c)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![Screenshot 2025-05-01 220338](https://github.com/user-attachments/assets/888f10ec-298b-4bbc-a8a3-c9deeebae860)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM Surgeries
+WHERE surgery_id = 3;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![Screenshot 2025-05-01 221454](https://github.com/user-attachments/assets/19522ba3-5d4e-4c08-80bb-fc3d0d2cf66c)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![Screenshot 2025-05-01 220347](https://github.com/user-attachments/assets/58044fdf-2e9c-440c-b5ec-54c05e6d726b)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+DELETE FROM Doctors
+WHERE doctor_id = 1;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Screenshot 2025-05-01 221500](https://github.com/user-attachments/assets/a68bb2dc-2d72-4279-9f88-5a109185cbcf)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![Screenshot 2025-05-01 220939](https://github.com/user-attachments/assets/51efdb64-cc34-49af-b490-5739f4a9d0c8)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM Doctors
+WHERE doctor_id = 1;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![Screenshot 2025-05-01 221506](https://github.com/user-attachments/assets/5b37c420-d4cb-45c4-8cf9-464743af9a78)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![Screenshot 2025-05-01 220955](https://github.com/user-attachments/assets/d8b57bac-17de-4ae4-b78e-58fdc3f3b8e9)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+DELETE FROM Surgeries
+WHERE surgery_date = '2024-02-28';  
 ```
 
 **Output:**
 
-![Output10](output.png)
+![Screenshot 2025-05-01 221517](https://github.com/user-attachments/assets/08960995-2031-4f64-949d-6f66e6be4445)
+
+
+![Screenshot 2025-05-01 221529](https://github.com/user-attachments/assets/9e345b70-46be-4193-9311-c01b7c1d55bd)
+
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
